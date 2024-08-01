@@ -80,14 +80,14 @@
       <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <div class="hidden sm:mb-8 sm:flex sm:justify-center">
           <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-            Now available in beta <a href="https://testflight.apple.com/join/8bKcdqCc" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Try it out <span aria-hidden="true">&rarr;</span></a>
+            Try beta <a href="https://testflight.apple.com/join/8bKcdqCc" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Try it out <span aria-hidden="true">&rarr;</span></a>
           </div>
         </div>
         <div class="text-center">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Find your relief at your fingertips</h1>
           <p class="mt-6 text-lg leading-8 text-gray-600">An AR-driven iOS app providing phantom limb pain relief for amputees.</p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
-            <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Soon available on  App Store</a>
+            <a href="https://apps.apple.com/us/app/limbrevive/id6504535154" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Now available on  App Store</a>
             <a href="#Introduction" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
           </div>
         </div>
@@ -225,6 +225,32 @@
                 </dt>
                 <dd class="mt-2 text-base leading-7 text-gray-600">
                     Distract yourself from pain with fun games and activities.
+                </dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-200">
+                        <img src={{ url_for('static', filename="mic.svg") }} class="h-6 w-6 text-white" aria-hidden="true" />
+                      </div> 
+                  </div>
+                  Voice commands
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">
+                    Support for voice commands to move your limb.
+                </dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-200">
+                        <img src={{ url_for('static', filename="seamless.svg") }} class="h-6 w-6 text-white" aria-hidden="true" />
+                      </div> 
+                  </div>
+                  Seamless mode
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">
+                    Make seamless movements to your limb in seamless mode.
                 </dd>
               </div>
             </dl>
