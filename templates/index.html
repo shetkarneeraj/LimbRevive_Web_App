@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href={{ url_for('static', filename="icon.png") }} type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <title>LimbRevive : : Home</title>
+</head>
+<body>
+
+  <div class="bg-white">
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">LimbRevive</span>
+            <img class="h-8 w-auto" src={{ url_for('static', filename="icon.png") }} alt="Icon">
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button id="mobile-menu-button" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
+          <a href="#Introduction" class="text-sm font-semibold leading-6 text-gray-900">Introduction</a>
+          <a href="#features" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
+          <a href="#instructions" class="text-sm font-semibold leading-6 text-gray-900">Instructions</a>
+          <a href="/privacy" class="text-sm font-semibold leading-6 text-gray-900">Privacy</a>
+          <a href={{ url_for('static', filename="tag.png") }} class="text-sm font-semibold leading-6 text-gray-900" download>Download tag</a>
+          <a href="https://testflight.apple.com/join/JkJI6zwy" class="text-sm font-semibold leading-6 text-gray-900">Beta</a>
+
+        </div>
+      </nav>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div id="mobile-menu" class="hidden lg:hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">LimbRevive</span>
+              <img class="h-8 w-auto" src={{ url_for('static', filename="icon.png") }} alt="Icon">
+            </a>
+            <button id="close-mobile-menu-button" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
+                <a href="#Introduction" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Introduction</a>
+                <a href="#features" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
+                <a href="#instructions" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Instructions</a>
+                <a href="tag.png" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" download>Download tag</a>
+                <a href="/privacy.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" download>Privacy</a>
+                <a href="https://testflight.apple.com/join/JkJI6zwy" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Beta</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  
+    <div class="relative isolate px-6 pt-14 lg:px-8">
+      <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+        <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+      </div>
+      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+          <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+            Now available in beta <a href="https://testflight.apple.com/join/8bKcdqCc" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Try it out <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="text-center">
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Find your relief at your fingertips</h1>
+          <p class="mt-6 text-lg leading-8 text-gray-600">An AR-driven iOS app providing phantom limb pain relief for amputees.</p>
+          <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Soon available on  App Store</a>
+            <a href="#Introduction" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+        <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+      </div>
+    </div>
+  </div>
+  
+      
+      <div class="py-24 sm:py-32" id="infopages">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="bg-white py-24 sm:py-32 mx-auto max-w-2xl lg:text-center" id="Introduction">
+            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What is Limb Revive?</p>
+            <p class="mt-6 text-lg leading-8 text-gray-600">LimbRevive uses cutting-edge AR technology to help amputees manage and alleviate phantom limb pain, providing a personalized and immersive experience for lasting relief.</p>
+          </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="flex p-6 max-w-full mx-auto bg-gray-100  rounded-xl shadow-md space-x-4">
+                            <div class="w-1/3 flex items-center justify-center">
+                                <img class="max-h-64 object-contain" src={{ url_for('static', filename="nervousSystem.png") }} alt="Nervous System">
+                            </div>
+                            <div class="w-2/3">
+                                <h2 class="text-xl font-bold">Your Body's Messaging System</h2>
+                                <p>Your body has a cool way of letting you know what's happening, like when you stub your toe and it hurts.</p>
+                                <p>This happens because your brain gets messages from your body telling it what's going on.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex p-6 max-w-full mx-auto bg-gray-10 rounded-xl shadow-md space-x-4">
+                            <div class="w-1/3 flex items-center justify-center">
+                                <img class="max-h-64 object-contain" src={{ url_for('static', filename="missing_signal.png") }} alt="Missing Messages">
+                            </div>
+                            <div class="w-2/3">
+                                <h2 class="text-xl font-bold">Missing Messages</h2>
+                                <p>Sometimes, if someone loses a body part, like an arm or a leg, those messages can get mixed up.</p>
+                                <p>Even though the body part isn't there anymore, the brain still thinks it is and sends messages as if it were still there.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex p-6 max-w-full mx-auto bg-gray-10 rounded-xl shadow-md space-x-4">
+                            <div class="w-1/3 flex items-center justify-center">
+                                <img class="max-h-64 object-contain" src={{ url_for('static', filename="phantomLimb.png") }} alt="Phantom Limb">
+                            </div>
+                            <div class="w-2/3">
+                                <h2 class="text-xl font-bold">Feeling Weird Sensations</h2>
+                                <p>So, if someone's arm or leg is missing, they might feel strange things in that spot, like tingling, itching, or even pain.</p>
+                                <p>But there's no reason for it because the body part isn't there anymore!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex p-6 max-w-full mx-auto bg-gray-10 rounded-xl shadow-md space-x-4">
+                            <div class="w-1/3 flex items-center justify-center">
+                                <img class="max-h-64 object-contain" src={{ url_for('static', filename="brainTricking.png") }} alt="Tricking the Brain">
+                            </div>
+                            <div class="w-2/3">
+                                <h2 class="text-xl font-bold">Tricking the Brain</h2>
+                                <p>Doctors and scientists are trying to figure out how to help people with these feelings.</p>
+                                <p>Sometimes, they use special treatments or even tricks like mirrors to make the brain realize that the missing body part isn't really there anymore.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex p-6 max-w-full mx-auto bg-gray-10 rounded-xl shadow-md space-x-4">
+                            <div class="w-1/3 flex items-center justify-center">
+                                <img class="max-h-64 object-contain" src={{ url_for('static', filename="relax.png") }} alt="Finding Relief">
+                            </div>
+                            <div class="w-2/3">
+                                <h2 class="text-xl font-bold">Finding Relief</h2>
+                                <p>It's like your brain is getting tricked into thinking the missing body part is still there.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>    
+
+      <div class="bg-white py-24 sm:py-32" id="features">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="text-base font-semibold leading-7 text-indigo-600">Find Relief</h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Features</p>
+          </div>
+          <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-200">
+                        <img src={{ url_for('static', filename="ar_logo.svg") }} class="h-6 w-6 text-white" aria-hidden="true" />
+                      </div>                                        
+                  </div>
+                  Augmented Reality Therapy
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">Experience immersive AR environments designed to engage and rewire your brain, helping to reduce the sensation of phantom limb pain effectively.</dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-200">
+                        <img src={{ url_for('static', filename="leg.svg") }} class="h-6 w-6 text-white" aria-hidden="true" />
+                      </div> 
+                  </div>
+                  Relief at your fingertips
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">No need for any specialised hardware, just an iPhone or iPad is enough.</dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-200">
+                        <img src={{ url_for('static', filename="inclusivity.svg") }} class="h-6 w-6 text-white" aria-hidden="true" />
+                      </div> 
+                  </div>
+                  Inclusivity
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">Choose skin tone for your skin tone from wide variety of colors.</dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-200">
+                        <img src={{ url_for('static', filename="gaming.svg") }} class="h-6 w-6 text-white" aria-hidden="true" />
+                      </div> 
+                  </div>
+                  Fun mode
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">
+                    Distract yourself from pain with fun games and activities.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="text-base font-semibold leading-7 text-indigo-600">Technologies used</h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Apple SDKs</p>
+            <p class="mt-6 text-lg leading-8 text-gray-600">Using best of Apple SDKs to bring your relief at your ease</p>
+          </div>
+          <div class="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4">
+            <div class="flex flex-col items-center">
+              <img class="max-h-24 w-full object-contain" src={{ url_for('static', filename="sdks/swift-96x96_2x.png") }} alt="Swift" width="128" height="128">
+              <a href="https://developer.apple.com/swift/" tagret="_blank" class="mt-2 text-center text-sm font-medium text-gray-900">Swift</a>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="max-h-24 w-full object-contain" src={{ url_for('static', filename="sdks/swiftui-96x96_2x.png") }} alt="SwiftUI" width="128" height="128">
+              <a href="https://developer.apple.com/xcode/swiftui/" target="_blank" class="mt-2 text-center text-sm font-medium text-gray-900">SwiftUI</a>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="max-h-24 w-full object-contain" src={{ url_for('static', filename="sdks/swiftdata-96x96_2x.png") }} alt="SwiftData" width="128" height="128">
+              <a href="https://developer.apple.com/xcode/swiftdata/" tagret="_blank" class="mt-2 text-center text-sm font-medium text-gray-900">SwiftData</a>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="max-h-24 w-full object-contain" src={{ url_for('static', filename="sdks/arkit-96x96_2x.png") }} alt="ARKit" width="128" height="128">
+              <a href="https://developer.apple.com/augmented-reality/arkit/" tagret="_blank" class="mt-2 text-center text-sm font-medium text-gray-900">ARKit</a>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="max-h-24 w-full object-contain" src={{ url_for('static', filename="sdks/realitykit-96x96_2x.png") }} alt="Reality kit" width="128" height="128">
+              <a href="https://developer.apple.com/augmented-reality/realitykit/" tagret="_blank" class="mt-2 text-center text-sm font-medium text-gray-900">RealityKit</a>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="max-h-24 w-full object-contain" src={{ url_for('static', filename="sdks/scenekit-128x128_2x.png") }} alt="SceneKit" width="128" height="128">
+              <a href="https://developer.apple.com/scenekit/" tagret="_blank" class="mt-2 text-center text-sm font-medium text-gray-900">SceneKit</a>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="max-h-24 w-full object-contain" src={{ url_for('static', filename="sdks/tipkit-96x96_2x.png") }} alt="TipKit" width="128" height="128">
+              <a href="https://developer.apple.com/tipkit/" tagret="_blank" class="mt-2 text-center text-sm font-medium text-gray-900">TipKit</a>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="max-h-24 w-full object-contain" src={{ url_for('static', filename="sdks/sirikit-96x96_2x.png") }} alt="TipKit" width="128" height="128">
+              <a  href="https://developer.apple.com/siri/" tagret="_blank" class="mt-2 text-center text-sm font-medium text-gray-900">SiriKit <span class="text-red-500">(Coming soon)</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+
+      <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0" id="instructions">
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+          <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+            <defs>
+              <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+                <path d="M100 200V.5M.5 .5H200" fill="none" />
+              </pattern>
+            </defs>
+            <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+              <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+            </svg>
+            <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+          </svg>
+        </div>
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+          <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+            <div class="lg:pr-4">
+              <div class="lg:max-w-lg">
+                <p class="text-base font-semibold leading-7 text-indigo-600">How to find relief?</p>
+                <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Instructions</h1>
+              </div>
+            </div>
+          </div>
+          <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+            <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src={{ url_for('static', filename="settings.png") }} alt="">
+          </div>
+          <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+            <div class="lg:pr-4">
+              <div class="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
+                <p>Download an AR tag available on the <a href="tag.png" class="font-semibold text-gray-900" download>link</a> and follow further instructions.</p>
+                <ul role="list" class="mt-8 space-y-8 text-gray-600">
+                  <li class="flex gap-x-3">
+                    <span><strong class="font-semibold text-gray-900">Select Settings</strong> Choose your skin tone from the available options. Indicate whether your amputation is on the right or left leg.</span>
+                  </li>
+                  <li class="flex gap-x-3">
+                    <span><strong class="font-semibold text-gray-900">Prepare for AR</strong> Ensure that your iPad's camera is positioned to align with the image tag on your amputated leg. Find a comfortable position where you can easily interact with the AR environment.</span>
+                  </li>
+                  <li class="flex gap-x-3">
+                    <span><strong class="font-semibold text-gray-900">Initiate AR View</strong> Tap on the "AR View" button on side bar to activate the augmented reality display. Wait for the virtual leg to appear in the AR environment.</span>
+                  </li>
+                  <li class="flex gap-x-3">
+                    <span><strong class="font-semibold text-gray-900">Adjust Position</strong> Once the virtual leg is visible, adjust your position to a comfortable stance. Make sure you have enough space to move your limbs freely without obstruction.</span>
+                  </li>
+                  <li class="flex gap-x-3">
+                    <span><strong class="font-semibold text-gray-900">Control the Leg</strong> Utilize the provided controls to manipulate the movement of the virtual prosthetic leg. Experiment with different movements to find what works best for you.</span>
+                  </li>
+                  <li class="flex gap-x-3">
+                    <span><strong class="font-semibold text-gray-900">Explore and Experiment</strong> Take your time to explore the AR environment and experiment with different movements and gestures. Familiarize yourself with the controls and their effects on the virtual leg.</span>
+                  </li>
+                </ul>
+                <p class="mt-8">You can also find these intructions in <strong class="font-semibold text-gray-900">Instructions</strong> tab in an app.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="bg-white">
+        <div class="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
+          <div class="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+            <svg viewBox="0 0 1024 1024" class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2" style="mask-image: radial-gradient(closest-side, white, transparent); sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0" aria-hidden="true">
+              <circle cx="512" cy="512" r="512" fill="url(#gradient)" fill-opacity="0.7" />
+              <defs>
+                <radialGradient id="gradient">
+                  <stop offset="0%" stop-color="#7775D6" />
+                  <stop offset="100%" stop-color="#E935C1" />
+                </radialGradient>
+              </defs>
+            </svg>
+            <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+              <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Swift Student Challenge Winner 2024</h2>
+              <p class="mt-6 text-lg leading-8 text-gray-300">We are thrilled to announce that LimbRevive has been selected as one of the winners of the 2024 Swift Student Challenge! This prestigious competition recognizes the creativity and coding skills of student developers worldwide. As a winner, LimbRevive stands among the top 350 innovative projects submitted by students. Apple is proud to support and uplift the next generation of developers, creators, and entrepreneurs through this challenge.</p>
+              <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+                <a href="https://www.wwdcscholars.com/s/E1B7CEDB-6596-4EE8-B492-E6890A8E0403/2024"
+                class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                View project
+              </a>
+                <a href="https://developer.apple.com/swift-student-challenge/" target="_blank" class="text-sm font-semibold leading-6 text-white">Learn more <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+            <div class="relative mt-16 h-80 lg:mt-8">
+              <img class="absolute left-0 top-0 w-[40rem] max-w-none rounded-md" src={{ url_for('static', filename="swift.webp") }} alt="LimbRevive App screenshot" width="128" height="128">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+
+
+
+<footer class="bg-white rounded-lg shadow light:bg-gray-900 m-4">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src={{ url_for('static', filename="icon.png") }} class="h-8" alt="LimbRevive Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-dark">LimbRevive</span>
+            </a>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://bit.ly/ineerajrajeev/" class="hover:underline">Neeraj R. Shetkar</a>. All Rights Reserved.</span>
+    </div>
+</footer>
+
+<style>
+  .swiper-slide {
+      display: flex;
+      justify-content: center;
+  }
+  .swiper-slide img {
+      max-height: 256px; /* Adjust the height as needed */
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.mySwiper', {
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+    });
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const closeMobileMenuButton = document.getElementById('close-mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    closeMobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+</script>
+
+</body>
+</html>
